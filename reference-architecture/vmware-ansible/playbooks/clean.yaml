@@ -15,11 +15,11 @@
         username: "{{ openshift_cloudprovider_vsphere_username }}"
         password: "{{ openshift_cloudprovider_vsphere_password }}"
         validate_certs: False
-        name: "{{ hostvars[item].inventory_hostname }}"
+        name: "{{ hostvars[item].vm_name }}"
         datacenter: "{{ openshift_cloudprovider_vsphere_datacenter }}"
         folder: "{{ openshift_cloudprovider_vsphere_datacenter }}/vm/{{ openshift_cloudprovider_vsphere_folder }}"
         state: absent
         force: true
       with_items: 
       - "{{ groups['nodes'] }}"
-      - "{{ groups['storage'] }}"
+      - "{{ groups['haproxy'] }}"

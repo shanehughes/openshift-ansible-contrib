@@ -4,23 +4,23 @@
     - create-vm-haproxy
 
 - name: Deploy ha proxy server
-  hosts: lb
+  hosts: haproxy
   roles:
     - rhsm
     - vmware-guest-setup
   ignore_errors: yes
 
 - name: Configure ha proxy server
-  hosts: lb
+  hosts: haproxy
   roles:
     - haproxy-server
 
 - name: Configure ha proxy server files
-  hosts: lb, masters, infras
+  hosts: haproxy, masters, infras
   roles:
     - haproxy-server-config
 
 - name: Configure ha proxy server files
-  hosts: lb
+  hosts: haproxy
   roles:
     - keepalived_haproxy

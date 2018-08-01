@@ -15,7 +15,7 @@
     username: "{{ openshift_cloudprovider_vsphere_username }}"
     password: "{{ openshift_cloudprovider_vsphere_password }}"
     validate_certs: False
-    name: "{{ hostvars[item].inventory_hostname }}"
+    name: "{{ hostvars[item].vm_name }}" 
     cluster: "{{ openshift_cloudprovider_vsphere_cluster}}"
     datacenter: "{{ openshift_cloudprovider_vsphere_datacenter }}"
     resource_pool: "{{ openshift_cloudprovider_vsphere_resource_pool }}"
@@ -49,7 +49,7 @@
       dns_servers:
       - "{{ openshift_cloudprovider_vsphere_vm_dns }}"
       dns_suffix: "{{ default_subdomain }}"
-      hostname: "{{ hostvars[item].inventory_hostname }}"
+      hostname: "{{ hostvars[item].vm_name }}"
   with_items: "{{ groups['masters'] }}"
 
 - name: Create production infra node VMs on vCenter
@@ -58,7 +58,7 @@
     username: "{{ openshift_cloudprovider_vsphere_username }}"
     password: "{{ openshift_cloudprovider_vsphere_password }}"
     validate_certs: False
-    name: "{{ hostvars[item].inventory_hostname }}" 
+    name: "{{ hostvars[item].vm_name }}" 
     cluster: "{{ openshift_cloudprovider_vsphere_cluster}}"
     datacenter: "{{ openshift_cloudprovider_vsphere_datacenter }}"
     resource_pool: "{{ openshift_cloudprovider_vsphere_resource_pool }}"
@@ -92,7 +92,7 @@
       dns_servers:
       - "{{ openshift_cloudprovider_vsphere_vm_dns }}"
       dns_suffix: "{{ default_subdomain }}"
-      hostname: "{{ hostvars[item].inventory_hostname }}"
+      hostname: "{{ hostvars[item].vm_name }}"
   with_items: "{{ groups['infras'] }}"
 
 - name: Create production app node VMs on vCenter
@@ -101,7 +101,7 @@
     username: "{{ openshift_cloudprovider_vsphere_username }}"
     password: "{{ openshift_cloudprovider_vsphere_password }}"
     validate_certs: False
-    name: "{{  hostvars[item].inventory_hostname }}"
+    name: "{{ hostvars[item].vm_name }}" 
     cluster: "{{ openshift_cloudprovider_vsphere_cluster}}"
     datacenter: "{{ openshift_cloudprovider_vsphere_datacenter }}"
     resource_pool: "{{ openshift_cloudprovider_vsphere_resource_pool }}"
@@ -135,5 +135,5 @@
       dns_servers:
       - "{{ openshift_cloudprovider_vsphere_vm_dns }}"
       dns_suffix: "{{ default_subdomain }}"
-      hostname: "{{  hostvars[item].inventory_hostname}}"
+      hostname: "{{  hostvars[item].vm_name }}"
   with_items: "{{ groups['apps'] }}"
