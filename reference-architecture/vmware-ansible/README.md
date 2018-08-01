@@ -31,7 +31,7 @@ To deploy a working vSphere environment on the deployment host, first prepare it
 ```
 # yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 # yum install -y python2-pyvmomi
-$ git clone -b vmw-3.9 https://github.com/openshift/openshift-ansible-contrib
+$ git clone -b vmw-3.10 https://github.com/openshift/openshift-ansible-contrib
 $ cd openshift-ansible-contrib/reference-architecture/vmware-ansible/
 ```
 
