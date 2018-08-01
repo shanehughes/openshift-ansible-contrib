@@ -22,7 +22,6 @@
         - PyYAML
         - perl
         - net-tools
-        - chrony
         - python-six
         - iptables
         - iptables-services
@@ -39,16 +38,8 @@
     - not is_atomic | bool
     - ansible_distribution == "RedHat"
 
-- name: be sure chrony is configured
-  template: src=chrony.conf.j2 dest=/etc/chrony.conf
-  notify:
-    - restart chronyd
-
 - name: set link to localtime
   command: timedatectl set-timezone {{timezone}}
-
-- name: be sure chronyd is running and enabled
-  service: name=chronyd state=started enabled=yes
 
 - block:
     - name: (Atomic) Remove extra docker lv from root vg
