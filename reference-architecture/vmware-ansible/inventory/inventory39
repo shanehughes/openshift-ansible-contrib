@@ -31,7 +31,7 @@ openshift_cloudprovider_vsphere_datacenter=datacenter
 openshift_cloudprovider_vsphere_cluster=cluster
 openshift_cloudprovider_vsphere_resource_pool=ocp39
 openshift_cloudprovider_vsphere_datastore="datastore"
-openshift_cloudprovider_vsphere_folder=stretch-ocp39
+openshift_cloudprovider_vsphere_folder=ocp39
 openshift_cloudprovider_vsphere_template="ocp-server-template"
 openshift_cloudprovider_vsphere_vm_network="VM Network"
 openshift_cloudprovider_vsphere_vm_netmask="255.255.255.0"
@@ -99,55 +99,55 @@ openshift_storageclass_default=false
 localhost
 
 [infras]
-stretch-infra-0  openshift_node_labels="{'region': 'infra'}" ipv4addr=192.168.114.8
-stretch-infra-1  openshift_node_labels="{'region': 'infra'}" ipv4addr=192.168.114.9
-stretch-infra-2  openshift_node_labels="{'region': 'infra'}" ipv4addr=192.168.114.13
+infra-0  openshift_node_labels="{'region': 'infra'}" ipv4addr=192.168.114.8
+infra-1  openshift_node_labels="{'region': 'infra'}" ipv4addr=192.168.114.9
+infra-2  openshift_node_labels="{'region': 'infra'}" ipv4addr=192.168.114.13
 
 [apps]
-stretch-app-0  openshift_node_labels="{'region': 'app'}" ipv4addr=192.168.114.10
-stretch-app-1  openshift_node_labels="{'region': 'app'}" ipv4addr=192.168.114.11
-stretch-app-2  openshift_node_labels="{'region': 'app'}" ipv4addr=192.168.114.12
-stretch-app-3  openshift_node_labels="{'region': 'app'}" ipv4addr=192.168.114.14
-stretch-app-4  openshift_node_labels="{'region': 'app'}" ipv4addr=192.168.114.15
-stretch-app-5  openshift_node_labels="{'region': 'app'}" ipv4addr=192.168.114.16
+app-0  openshift_node_labels="{'region': 'app'}" ipv4addr=192.168.114.10
+app-1  openshift_node_labels="{'region': 'app'}" ipv4addr=192.168.114.11
+app-2  openshift_node_labels="{'region': 'app'}" ipv4addr=192.168.114.12
+app-3  openshift_node_labels="{'region': 'app'}" ipv4addr=192.168.114.14
+app-4  openshift_node_labels="{'region': 'app'}" ipv4addr=192.168.114.15
+app-5  openshift_node_labels="{'region': 'app'}" ipv4addr=192.168.114.16
 
 [masters]
-stretch-master-0 openshift_node_labels="{'region': 'master'}" ipv4addr=192.168.114.6
-stretch-master-1 openshift_node_labels="{'region': 'master'}" ipv4addr=192.168.114.7
-stretch-master-2 openshift_node_labels="{'region': 'master'}" ipv4addr=192.168.114.17
+master-0 openshift_node_labels="{'region': 'master'}" ipv4addr=192.168.114.6
+master-1 openshift_node_labels="{'region': 'master'}" ipv4addr=192.168.114.7
+master-2 openshift_node_labels="{'region': 'master'}" ipv4addr=192.168.114.17
 
 [etcd]
-stretch-master-0
-stretch-master-1
-stretch-master-2
+master-0
+master-1
+master-2
 
 [haproxy]
-stretch-haproxy-0 openshift_node_labels="{'region': 'haproxy'}" ipv4addr=192.168.114.18
-stretch-haproxy-1 openshift_node_labels="{'region': 'haproxy'}" ipv4addr=192.168.114.19 
+haproxy-0 openshift_node_labels="{'region': 'haproxy'}" ipv4addr=192.168.114.18
+haproxy-1 openshift_node_labels="{'region': 'haproxy'}" ipv4addr=192.168.114.19 
 
 [nodes]
-stretch-master-0 openshift_node_labels="{'region': 'master'}" openshift_schedulable=true openshift_hostname=stretch-master-0
-stretch-master-1 openshift_node_labels="{'region': 'master'}" openshift_schedulable=true openshift_hostname=stretch-master-1
-stretch-master-2 openshift_node_labels="{'region': 'master'}" openshift_schedulable=true openshift_hostname=stretch-master-2
-stretch-infra-0  openshift_node_labels="{'region': 'infra'}" openshift_hostname=stretch-infra-0
-stretch-infra-1  openshift_node_labels="{'region': 'infra'}" openshift_hostname=stretch-infra-1
-stretch-infra-2  openshift_node_labels="{'region': 'infra'}" openshift_hostname=stretch-infra-2
-stretch-app-0  openshift_node_labels="{'region': 'app'}" openshift_hostname=stretch-app-0
-stretch-app-1  openshift_node_labels="{'region': 'app'}" openshift_hostname=stretch-app-1
-stretch-app-2  openshift_node_labels="{'region': 'app'}" openshift_hostname=stretch-app-2
-stretch-app-3  openshift_node_labels="{'region': 'app'}" openshift_hostname=stretch-app-3
-stretch-app-4  openshift_node_labels="{'region': 'app'}" openshift_hostname=stretch-app-4
-stretch-app-5  openshift_node_labels="{'region': 'app'}" openshift_hostname=stretch-app-5
-stretch-cns-0  openshift_node_labels="{'region': 'storage'}" openshift_hostname=stretch-cns-0
-stretch-cns-1  openshift_node_labels="{'region': 'storage'}" openshift_hostname=stretch-cns-1
-stretch-cns-2  openshift_node_labels="{'region': 'storage'}" openshift_hostname=stretch-cns-2
+master-0 openshift_node_labels="{'region': 'master'}" openshift_schedulable=true openshift_hostname=master-0
+master-1 openshift_node_labels="{'region': 'master'}" openshift_schedulable=true openshift_hostname=master-1
+master-2 openshift_node_labels="{'region': 'master'}" openshift_schedulable=true openshift_hostname=master-2
+infra-0  openshift_node_labels="{'region': 'infra'}" openshift_hostname=infra-0
+infra-1  openshift_node_labels="{'region': 'infra'}" openshift_hostname=infra-1
+infra-2  openshift_node_labels="{'region': 'infra'}" openshift_hostname=infra-2
+app-0  openshift_node_labels="{'region': 'app'}" openshift_hostname=app-0
+app-1  openshift_node_labels="{'region': 'app'}" openshift_hostname=app-1
+app-2  openshift_node_labels="{'region': 'app'}" openshift_hostname=app-2
+app-3  openshift_node_labels="{'region': 'app'}" openshift_hostname=app-3
+app-4  openshift_node_labels="{'region': 'app'}" openshift_hostname=app-4
+app-5  openshift_node_labels="{'region': 'app'}" openshift_hostname=app-5
+cns-0  openshift_node_labels="{'region': 'storage'}" openshift_hostname=cns-0
+cns-1  openshift_node_labels="{'region': 'storage'}" openshift_hostname=cns-1
+cns-2  openshift_node_labels="{'region': 'storage'}" openshift_hostname=cns-2
 
 [glusterfs]
-stretch-cns-0  glusterfs_devices='[ "/dev/sdd" ]'
-stretch-cns-1  glusterfs_devices='[ "/dev/sdd" ]'
-stretch-cns-2  glusterfs_devices='[ "/dev/sdd" ]'
+cns-0  glusterfs_devices='[ "/dev/sdd" ]'
+cns-1  glusterfs_devices='[ "/dev/sdd" ]'
+cns-2  glusterfs_devices='[ "/dev/sdd" ]'
 
 [glusterfs_registry]
-stretch-infra-0  glusterfs_devices='[ "/dev/sdd" ]'
-stretch-infra-1  glusterfs_devices='[ "/dev/sdd" ]'
-stretch-infra-2  glusterfs_devices='[ "/dev/sdd" ]'
+infra-0  glusterfs_devices='[ "/dev/sdd" ]'
+infra-1  glusterfs_devices='[ "/dev/sdd" ]'
+infra-2  glusterfs_devices='[ "/dev/sdd" ]'
