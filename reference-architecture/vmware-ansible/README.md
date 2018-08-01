@@ -18,6 +18,14 @@ The repository contains Ansible playbooks which deploy 3 masters, 3 infrastructu
 
 ## Deploying a working vSphere Environment
 
+The VMs will be created with the following properties:
+
+
+|Node Type | CPUs | Memory | Disk 1 | Disk 2 | Disk 3 | Disk 4 |
+| ------- | ------- | ------- | ------- | ------- | ------- | ------- |
+| Master  | 2 vCPU | 16GB RAM | 1 x 60GB - OS RHEL 7.4 | 1 x 40GB - Docker volume | 1 x 40Gb -  EmptyDir volume | 1 x 40GB - ETCD volume |
+| Node | 2 vCPU | 8GB RAM | 1 x 60GB - OS RHEL 7.4 | 1 x 40GB - Docker volume | 1 x 40Gb - EmptyDir volume | |
+
 To deploy a working vSphere environment on the deployment host, first prepare it. 
 
 ```
