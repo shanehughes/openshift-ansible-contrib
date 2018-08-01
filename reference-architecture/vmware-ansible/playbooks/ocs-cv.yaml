@@ -1,5 +1,12 @@
 ---
-- hosts: storage
+- hosts: localhost
+  connection: local
+  gather_facts: yes
+  become: no
+  roles:
+  - create-vm-cns-prod-ose
+
+- hosts: glusterfs 
   gather_facts: yes
   become: no
   roles:

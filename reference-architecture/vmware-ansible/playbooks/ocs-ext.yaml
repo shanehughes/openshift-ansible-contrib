@@ -1,4 +1,13 @@
 ---
+- hosts: localhost
+  connection: local
+  gather_facts: yes
+  become: no
+  vars_files:
+  - vars/main.yaml
+  roles:
+  - create-vm-crs-prod-ose
+
 - hosts: crs
   gather_facts: yes
   become: no

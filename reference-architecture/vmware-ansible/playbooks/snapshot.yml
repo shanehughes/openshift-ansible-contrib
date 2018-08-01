@@ -1,16 +1,11 @@
 ---
-- hosts: nodes
-  ignore_errors: yes
-  roles:
-    - rhsm-unregister
-
 - hosts: localhost
   user: root
   become: false
   ignore_errors: yes
   tasks:
-    - name: Delete all added VMs
-      vmware_guest:
+    - name: snapshot all added VMs
+      vmware_guest_snapshot:
         hostname: "{{ openshift_cloudprovider_vsphere_host }}"
         username: "{{ openshift_cloudprovider_vsphere_username }}"
         password: "{{ openshift_cloudprovider_vsphere_password }}"
@@ -18,10 +13,7 @@
         name: "{{ hostvars[item].vm_name }}"
         datacenter: "{{ openshift_cloudprovider_vsphere_datacenter }}"
         folder: "{{ openshift_cloudprovider_vsphere_datacenter }}/vm/{{ openshift_cloudprovider_vsphere_folder }}"
-        state: absent
-        force: true
+        state: present
+        snapshot_name: ss
       with_items: 
       - "{{ groups['nodes'] }}"
-      - "{{ groups['haproxy'] }}"
-      - "{{ groups['glusterfs'] }}"
-      - "{{ groups['crs'] }}"
