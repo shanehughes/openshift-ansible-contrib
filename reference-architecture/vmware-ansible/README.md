@@ -16,7 +16,7 @@ The repository contains Ansible playbooks which deploy 3 masters, 3 infrastructu
 
 - Add your private key  **ssh_keys/ocp-installer** so Ansible can customize the guest OSs.
 
-== Deploying a working vSphere Environment
+## Deploying a working vSphere Environment
 
 To deploy a working vSphere environment on the deployment host, first prepare it. 
 
@@ -62,7 +62,7 @@ $ ansible-playbook /usr/share/ansible/openshift-ansible/playbooks/prerequisites.
 $ ansible-playbook /usr/share/ansible/openshift-ansible/playbooks/deploy_cluster.yml
 ```
 
-== Deploying a working vSphere CNS Environment
+## Deploying a working vSphere CNS Environment
 
 Next, make sure that the appropriate variables are assigned in the inventory file:
 
