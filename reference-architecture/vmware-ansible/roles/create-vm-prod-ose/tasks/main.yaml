@@ -15,7 +15,7 @@
     username: "{{ openshift_cloudprovider_vsphere_username }}"
     password: "{{ openshift_cloudprovider_vsphere_password }}"
     validate_certs: False
-    name: "{{ hostvars[item].vm_name }}" 
+    name: "{{ hostvars[item].vm_name }}"
     cluster: "{{ openshift_cloudprovider_vsphere_cluster}}"
     datacenter: "{{ openshift_cloudprovider_vsphere_datacenter }}"
     resource_pool: "{{ openshift_cloudprovider_vsphere_resource_pool }}"
@@ -101,7 +101,7 @@
     username: "{{ openshift_cloudprovider_vsphere_username }}"
     password: "{{ openshift_cloudprovider_vsphere_password }}"
     validate_certs: False
-    name: "{{ hostvars[item].vm_name }}" 
+    name: "{{ hostvars[item].vm_name }}"
     cluster: "{{ openshift_cloudprovider_vsphere_cluster}}"
     datacenter: "{{ openshift_cloudprovider_vsphere_datacenter }}"
     resource_pool: "{{ openshift_cloudprovider_vsphere_resource_pool }}"
