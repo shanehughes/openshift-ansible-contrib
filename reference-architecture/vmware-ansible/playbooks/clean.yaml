@@ -23,7 +23,6 @@
       with_items: 
       - "{{ groups['nodes'] }}"
       - "{{ groups['haproxy'] }}"
-      - "{{ groups['crs'] }}"
 
 - hosts: localhost
   user: root
