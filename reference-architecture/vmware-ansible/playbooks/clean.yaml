@@ -21,7 +21,9 @@
         state: absent
         force: true
       with_items: 
-      - "{{ groups['nodes'] }}"
+      - "{{ groups['masters'] }}"
+      - "{{ groups['apps'] }}"
+      - "{{ groups['infras'] }}"
       - "{{ groups['haproxy'] }}"
 
 - hosts: localhost
