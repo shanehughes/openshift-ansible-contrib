@@ -60,8 +60,8 @@
         org_id: "{{ rhsm_org_id | default(omit) }}"
       when:
         - "'not registered' in subscribed.stdout"
-        - rhsm_satellite is defined
-        - rhsm_satellite|trim != ''
+        - rhsm_activation_key is defined
+        - rhsm_activation_key|trim != ''
       register: rhn
       until: rhn|success
       retries: 5
