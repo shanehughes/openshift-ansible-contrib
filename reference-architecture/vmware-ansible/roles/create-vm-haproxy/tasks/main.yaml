@@ -11,7 +11,6 @@
     resource_pool: "{{ openshift_cloudprovider_vsphere_resource_pool }}"
     template: "{{ openshift_cloudprovider_vsphere_template }}"
     folder: "{{ openshift_cloudprovider_vsphere_datacenter }}/vm/{{ openshift_cloudprovider_vsphere_folder }}"
-    annotation: "{{ hostvars[item].openshift_node_labels }}"  
     state: poweredon
     wait_for_ip_address: true
     disk:
