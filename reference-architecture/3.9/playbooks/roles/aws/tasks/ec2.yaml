@@ -18,6 +18,8 @@
     key_name: "{{ clusterid }}.{{ dns_domain }}"
     monitoring: no
     region: "{{ aws_region }}"
+    spot_price: "{{ ec2_type_bastion_price }}"
+    spot_wait_timeout: 600
     termination_protection: no
     user_data: "{{ lookup('template', ( playbook_dir + '/roles/aws/templates/ec2_userdata.sh.j2') ) }}"
     volumes:
@@ -68,6 +70,8 @@
     key_name: "{{ clusterid }}.{{ dns_domain }}"
     monitoring: no
     region: "{{ aws_region }}"
+    spot_price: "{{ ec2_type_master_price }}"
+    spot_wait_timeout: 600
     termination_protection: no
     user_data: "{{ lookup('template', ( playbook_dir + '/roles/aws/templates/ec2_userdata.sh.j2') ) }}"
     volumes:
@@ -173,6 +177,8 @@
     key_name: "{{ clusterid }}.{{ dns_domain }}"
     monitoring: no
     region: "{{ aws_region }}"
+    spot_price: "{{ ec2_type_infra_price }}"
+    spot_wait_timeout: 600
     termination_protection: no
     user_data: "{{ lookup('template', ( playbook_dir + '/roles/aws/templates/ec2_userdata.sh.j2') ) }}"
     volumes:
@@ -265,6 +271,8 @@
     key_name: "{{ clusterid }}.{{ dns_domain }}"
     monitoring: no
     region: "{{ aws_region }}"
+    spot_price: "{{ ec2_type_node_price }}"
+    spot_wait_timeout: 600
     termination_protection: no
     user_data: "{{ lookup('template', ( playbook_dir + '/roles/aws/templates/ec2_userdata.sh.j2') ) }}"
     volumes:
